@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0",
+  "subject": {
+    "id": "patient-mdm-lim-mei-ling",
+    "displayName": "Mdm Lim Mei Ling",
+    "isSynthetic": true
+  },
+  "lastConfirmedCheck": "2026-08-06T18:00:00+08:00",
+  "appointments": [
+    {
+      "id": "appt-cardiology-2026-08-12-1030",
+      "category": "appointment",
+      "description": "Cardiology appointment on 12 August 2026 at 10:30 AM",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "assigned",
+      "relatedRecordIds": [
+        "assignment-daniel-accompany-2026-08-12",
+        "activity-senior-2026-08-12-afternoon"
+      ],
+      "evidenceQuote": "Cardiology appointment: 12 August 2026 at 10:30 AM.",
+      "notes": "Baseline confirmed plan.",
+      "uncertainty": "None recorded."
+    }
+  ],
+  "activeTasks": [],
+  "caregiverAssignments": [
+    {
+      "id": "assignment-daniel-accompany-2026-08-12",
+      "category": "assignment",
+      "description": "Daniel to accompany Mdm Lim to the 12 August cardiology appointment",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "assigned",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-12-1030"
+      ],
+      "evidenceQuote": "Son Daniel is assigned to accompany her.",
+      "notes": "Baseline confirmed plan.",
+      "uncertainty": "None recorded."
+    }
+  ],
+  "equipmentIssues": [
+    {
+      "id": "equipment-walking-frame-status",
+      "category": "equipment_issue",
+      "description": "Walking frame recorded as having no known issue",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "",
+      "actionStatus": "informational",
+      "relatedRecordIds": [],
+      "evidenceQuote": "Walking frame is recorded as having no known issue.",
+      "notes": "Baseline equipment status.",
+      "uncertainty": "None recorded."
+    }
+  ],
+  "supplyIssues": [],
+  "unresolvedQuestions": [],
+  "recentChanges": [
+    {
+      "id": "activity-senior-2026-08-12-afternoon",
+      "category": "change",
+      "description": "Senior activity scheduled for 12 August afternoon",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "",
+      "actionStatus": "informational",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-12-1030"
+      ],
+      "evidenceQuote": "A senior activity is scheduled for 12 August afternoon.",
+      "notes": "Used to evaluate timing conflicts.",
+      "uncertainty": "None recorded."
+    }
+  ],
+  "actionHistory": []
+}

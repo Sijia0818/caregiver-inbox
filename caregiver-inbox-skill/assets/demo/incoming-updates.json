@@ -1,0 +1,51 @@
+{
+  "capturedAt": "2026-08-07T08:30:00+08:00",
+  "subjectId": "patient-mdm-lim-mei-ling",
+  "updates": [
+    {
+      "id": "appt-update-2026-08-07-001",
+      "type": "appointment_update",
+      "classification": "changed_information",
+      "description": "Cardiology appointment changed to 15 August 2026 at 10:30 AM and patient must bring the latest medication list",
+      "source": {
+        "type": "healthcare_api",
+        "name": "Mock HealthHub",
+        "reference": "appt-update-2026-08-07-001",
+        "rank": 1
+      },
+      "sourceTimestamp": "2026-08-07T08:15:00+08:00",
+      "evidenceQuote": "Cardiology appointment changed to 15 August 2026 at 10:30 AM. Please bring the latest medication list.",
+      "uncertainty": "No caregiver availability update included."
+    },
+    {
+      "id": "msg-daniel-leave-2026-08-12",
+      "type": "family_message",
+      "classification": "new_information",
+      "description": "Daniel says he has taken leave on 12 August to accompany Mdm Lim; availability for 15 August is unknown",
+      "source": {
+        "type": "messaging_connector",
+        "name": "Synthetic family message",
+        "reference": "family-thread-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:18:00+08:00",
+      "evidenceQuote": "I've taken leave on 12 Aug to go with Mum. Not sure yet about 15 Aug.",
+      "uncertainty": "15 August availability not confirmed."
+    },
+    {
+      "id": "helper-update-walking-frame-001",
+      "type": "equipment_observation",
+      "classification": "possible_contradiction",
+      "description": "Helper reports that the walking frame's left grip appears loose and is unsure whether it should be used",
+      "source": {
+        "type": "caregiver_message",
+        "name": "Synthetic helper update",
+        "reference": "helper-note-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:20:00+08:00",
+      "evidenceQuote": "The walking frame left grip seems loose. I'm not sure if Ah Ma should use it.",
+      "uncertainty": "Observation not yet inspected or confirmed."
+    }
+  ]
+}

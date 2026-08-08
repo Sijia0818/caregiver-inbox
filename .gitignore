@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# macOS
+.DS_Store
+
+# JavaScript dependencies
+node_modules/
+
+# CarePortal Sandbox local runtime data
+mock-health-portal/backend/data/
+mock-health-portal/backend/tests/test_careportal.db
+mock-health-portal/backend/tests/test_careportal.db-shm
+mock-health-portal/backend/tests/test_careportal.db-wal

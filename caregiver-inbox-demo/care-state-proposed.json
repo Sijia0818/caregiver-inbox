@@ -1,0 +1,315 @@
+{
+  "schemaVersion": "1.0",
+  "subject": {
+    "id": "patient-mdm-lim-mei-ling",
+    "displayName": "Mdm Lim Mei Ling",
+    "isSynthetic": true
+  },
+  "lastConfirmedCheck": "2026-08-07T08:30:00+08:00",
+  "appointments": [
+    {
+      "id": "appt-cardiology-2026-08-12-1030",
+      "category": "appointment",
+      "description": "Cardiology appointment on 12 August 2026 at 10:30 AM",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "assigned",
+      "relatedRecordIds": [
+        "assignment-daniel-accompany-2026-08-12",
+        "activity-senior-2026-08-12-afternoon"
+      ],
+      "evidenceQuote": "Cardiology appointment: 12 August 2026 at 10:30 AM.",
+      "notes": "Baseline confirmed plan.",
+      "uncertainty": "None recorded."
+    },
+    {
+      "id": "appt-cardiology-2026-08-15-1030",
+      "category": "appointment",
+      "description": "Proposed update: cardiology appointment moved to 15 August 2026 at 10:30 AM",
+      "source": {
+        "type": "healthcare_api",
+        "name": "Mock HealthHub",
+        "reference": "appt-update-2026-08-07-001",
+        "rank": 1
+      },
+      "sourceTimestamp": "2026-08-07T08:15:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "unconfirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "awaiting_approval",
+      "relatedRecordIds": [
+        "assignment-daniel-accompany-2026-08-15",
+        "task-prepare-medication-list-2026-08-15",
+        "question-daniel-availability-2026-08-15"
+      ],
+      "evidenceQuote": "Cardiology appointment changed to 15 August 2026 at 10:30 AM. Please bring the latest medication list.",
+      "notes": "Existing confirmed plan still lists 12 August 2026 at 10:30 AM.",
+      "uncertainty": "Calendar and care plan not updated yet."
+    }
+  ],
+  "activeTasks": [
+    {
+      "id": "task-prepare-medication-list-2026-08-15",
+      "category": "task",
+      "description": "Prepare latest medication list for the 15 August cardiology appointment",
+      "source": {
+        "type": "healthcare_api",
+        "name": "Mock HealthHub",
+        "reference": "appt-update-2026-08-07-001",
+        "rank": 1
+      },
+      "sourceTimestamp": "2026-08-07T08:15:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "proposed",
+      "assignedPerson": "",
+      "actionStatus": "awaiting_approval",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-15-1030"
+      ],
+      "evidenceQuote": "Please bring the latest medication list.",
+      "notes": "New preparation task proposed by source update.",
+      "uncertainty": "Owner not assigned yet."
+    }
+  ],
+  "caregiverAssignments": [
+    {
+      "id": "assignment-daniel-accompany-2026-08-12",
+      "category": "assignment",
+      "description": "Daniel to accompany Mdm Lim to the 12 August cardiology appointment",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "assigned",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-12-1030"
+      ],
+      "evidenceQuote": "Son Daniel is assigned to accompany her.",
+      "notes": "Baseline confirmed plan.",
+      "uncertainty": "None recorded."
+    },
+    {
+      "id": "assignment-daniel-accompany-2026-08-15",
+      "category": "assignment",
+      "description": "Check whether Daniel can accompany Mdm Lim on 15 August 2026",
+      "source": {
+        "type": "messaging_connector",
+        "name": "Synthetic family message",
+        "reference": "family-thread-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:18:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "unconfirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "awaiting_approval",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-15-1030",
+        "question-daniel-availability-2026-08-15"
+      ],
+      "evidenceQuote": "I've taken leave on 12 Aug to go with Mum. Not sure yet about 15 Aug.",
+      "notes": "Existing leave arrangement applies to 12 August only.",
+      "uncertainty": "Availability for 15 August not confirmed."
+    }
+  ],
+  "equipmentIssues": [
+    {
+      "id": "equipment-walking-frame-status",
+      "category": "equipment_issue",
+      "description": "Walking frame recorded as having no known issue",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "",
+      "actionStatus": "informational",
+      "relatedRecordIds": [],
+      "evidenceQuote": "Walking frame is recorded as having no known issue.",
+      "notes": "Baseline equipment status.",
+      "uncertainty": "None recorded."
+    },
+    {
+      "id": "equipment-walking-frame-left-grip-2026-08-07",
+      "category": "equipment_issue",
+      "description": "Helper observed that the walking frame left grip appears loose",
+      "source": {
+        "type": "caregiver_message",
+        "name": "Synthetic helper update",
+        "reference": "helper-note-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:20:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "unconfirmed",
+      "assignedPerson": "",
+      "actionStatus": "requires_professional_clarification",
+      "relatedRecordIds": [
+        "equipment-walking-frame-status"
+      ],
+      "evidenceQuote": "The walking frame left grip seems loose. I'm not sure if Ah Ma should use it.",
+      "notes": "Flagged for inspection only. No safety judgment made.",
+      "uncertainty": "Needs inspection or professional clarification before relying on device."
+    }
+  ],
+  "supplyIssues": [],
+  "unresolvedQuestions": [
+    {
+      "id": "question-daniel-availability-2026-08-15",
+      "category": "question",
+      "description": "Is Daniel available to accompany Mdm Lim on 15 August 2026?",
+      "source": {
+        "type": "messaging_connector",
+        "name": "Synthetic family message",
+        "reference": "family-thread-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:18:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "unconfirmed",
+      "assignedPerson": "Daniel",
+      "actionStatus": "awaiting_approval",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-15-1030",
+        "assignment-daniel-accompany-2026-08-15"
+      ],
+      "evidenceQuote": "I've taken leave on 12 Aug to go with Mum. Not sure yet about 15 Aug.",
+      "notes": "Needed before confirming caregiver assignment.",
+      "uncertainty": "No reply for 15 August yet."
+    }
+  ],
+  "recentChanges": [
+    {
+      "id": "activity-senior-2026-08-12-afternoon",
+      "category": "change",
+      "description": "Senior activity scheduled for 12 August afternoon",
+      "source": {
+        "type": "caregiver_record",
+        "name": "Confirmed family care plan",
+        "reference": "care-plan-v1",
+        "rank": 4
+      },
+      "sourceTimestamp": "2026-08-01T10:00:00+08:00",
+      "lastUpdated": "2026-08-01T10:00:00+08:00",
+      "confirmationStatus": "confirmed",
+      "assignedPerson": "",
+      "actionStatus": "informational",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-12-1030"
+      ],
+      "evidenceQuote": "A senior activity is scheduled for 12 August afternoon.",
+      "notes": "Used to evaluate timing conflicts.",
+      "uncertainty": "None recorded."
+    },
+    {
+      "id": "change-appointment-rescheduled-2026-08-15",
+      "category": "change",
+      "description": "Appointment rescheduled from 12 August to 15 August 2026 at 10:30 AM",
+      "source": {
+        "type": "healthcare_api",
+        "name": "Mock HealthHub",
+        "reference": "appt-update-2026-08-07-001",
+        "rank": 1
+      },
+      "sourceTimestamp": "2026-08-07T08:15:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "unconfirmed",
+      "assignedPerson": "",
+      "actionStatus": "awaiting_approval",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-12-1030",
+        "appt-cardiology-2026-08-15-1030"
+      ],
+      "evidenceQuote": "Cardiology appointment changed to 15 August 2026 at 10:30 AM. Please bring the latest medication list.",
+      "notes": "Senior activity on 12 August no longer directly clashes with appointment time.",
+      "uncertainty": "Calendar not yet updated."
+    },
+    {
+      "id": "change-walking-frame-observation-2026-08-07",
+      "category": "change",
+      "description": "New walking-frame issue reported by helper",
+      "source": {
+        "type": "caregiver_message",
+        "name": "Synthetic helper update",
+        "reference": "helper-note-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:20:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "unconfirmed",
+      "assignedPerson": "",
+      "actionStatus": "requires_professional_clarification",
+      "relatedRecordIds": [
+        "equipment-walking-frame-left-grip-2026-08-07",
+        "equipment-walking-frame-status"
+      ],
+      "evidenceQuote": "The walking frame left grip seems loose. I'm not sure if Ah Ma should use it.",
+      "notes": "Observation differs from previously confirmed no-issue record.",
+      "uncertainty": "Condition not yet inspected."
+    }
+  ],
+  "actionHistory": [
+    {
+      "id": "action-propose-care-plan-update-001",
+      "category": "action",
+      "description": "Propose updating confirmed care plan and calendar to reflect 15 August appointment",
+      "source": {
+        "type": "healthcare_api",
+        "name": "Mock HealthHub",
+        "reference": "appt-update-2026-08-07-001",
+        "rank": 1
+      },
+      "sourceTimestamp": "2026-08-07T08:15:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "proposed",
+      "assignedPerson": "Primary caregiver",
+      "actionStatus": "awaiting_approval",
+      "relatedRecordIds": [
+        "appt-cardiology-2026-08-15-1030"
+      ],
+      "evidenceQuote": "Cardiology appointment changed to 15 August 2026 at 10:30 AM. Please bring the latest medication list.",
+      "notes": "No external calendar connector used during test.",
+      "uncertainty": "Awaiting approval."
+    },
+    {
+      "id": "action-draft-message-daniel-001",
+      "category": "action",
+      "description": "Draft message asking Daniel to confirm availability for 15 August 2026",
+      "source": {
+        "type": "messaging_connector",
+        "name": "Synthetic family message",
+        "reference": "family-thread-2026-08-07",
+        "rank": 5
+      },
+      "sourceTimestamp": "2026-08-07T08:18:00+08:00",
+      "lastUpdated": "2026-08-07T08:30:00+08:00",
+      "confirmationStatus": "proposed",
+      "assignedPerson": "Primary caregiver",
+      "actionStatus": "proposed",
+      "relatedRecordIds": [
+        "question-daniel-availability-2026-08-15"
+      ],
+      "evidenceQuote": "I've taken leave on 12 Aug to go with Mum. Not sure yet about 15 Aug.",
+      "notes": "Draft only. Not sent.",
+      "uncertainty": "Awaiting caregiver approval."
+    }
+  ]
+}

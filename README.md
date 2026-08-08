@@ -51,7 +51,8 @@ Our hackathon prototype will demonstrate the following scenario:
 ## Core Components
 
 - **WorkBuddy Skill** — Defines the caregiver-coordination workflow
-- **Mock HealthHub** — Provides synthetic appointments, documents and notifications
+- **CarePortal Sandbox** — Synthetic healthcare portal under `mock-health-portal/` with appointments, documents, notifications, permissions and a connector-ready API
+- **Mock HealthHub** — Earlier shorthand for the synthetic healthcare source; this prototype does not claim affiliation with HealthHub
 - **Messaging Integration** — Supplies synthetic caregiver and helper updates
 - **Confirmed Care State** — Stores current appointments, tasks and responsibilities
 - **Action Layer** — Updates plans, calendars and draft messages after approval
@@ -84,7 +85,7 @@ Caregiver Inbox does not:
 ```text
 caregiver-inbox/
 ├── workbuddy-skill/
-├── mock-healthhub/
+├── mock-health-portal/
 ├── integration/
 ├── synthetic-data/
 ├── docs/
