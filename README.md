@@ -50,16 +50,18 @@ Our hackathon prototype will demonstrate the following scenario:
 
 ## Core Components
 
-- **WorkBuddy Skill** — Defines the caregiver-coordination workflow
+- **WorkBuddy Skills** — Six focused skills under `caregiver-inbox-skill/` instead of one monolithic skill: `care-onboarding` (one-time source setup), `care-source-sync` (retrieval), `care-state-diff` (comparison and conflict detection), `care-briefing` (caregiver-facing summary), `care-action-executor` (approval-gated execution), and `caregiver-inbox` (the orchestrator entry point that sequences the rest)
 - **CarePortal Sandbox** — Synthetic healthcare portal under `mock-health-portal/` with appointments, documents, notifications, permissions and a connector-ready API
 - **Mock HealthHub** — Earlier shorthand for the synthetic healthcare source; this prototype does not claim affiliation with HealthHub
-- **Messaging Integration** — Supplies synthetic caregiver and helper updates
-- **Confirmed Care State** — Stores current appointments, tasks and responsibilities
-- **Action Layer** — Updates plans, calendars and draft messages after approval
+- **Messaging Integration** — WhatsApp via the installed `wacli` skill, scoped to exactly the group chat or phone number(s) the caregiver names during onboarding (asked explicitly, never assumed); carries only synthetic message content even though the transport account is real
+- **Confirmed Care State** — `care-data/care-state.json`, `care-data/care-connections.json`, and `care-data/care-action-audit.jsonl`, all in `care-data/` at a fixed location (`~/Desktop/care-data/`, a per-user runtime folder, never committed) — store current appointments, tasks, source connections, and the action history
+- **Action Layer** — Auto-updates Google Calendar via `gog` only when sources agree on an appointment *and* there's no busy-time conflict with an existing commitment; everything else (messages via `wacli`, care-plan edits, task assignment) waits for explicit caregiver approval
 
 ## Safety and Privacy
 
-This prototype uses entirely synthetic data.
+All patient and care-plan content in this prototype is synthetic — fictional patient, fictional family members, fictional appointments.
+
+A real account may be linked only as a transport for that synthetic content (e.g. WhatsApp via `wacli`, scoped to exactly the chat or number(s) the caregiver names during setup), never to access real health records or real personal correspondence. See `caregiver-inbox-skill/shared/references/safety-and-source-rules.md` for the full rules.
 
 Caregiver Inbox does not:
 
@@ -68,25 +70,32 @@ Caregiver Inbox does not:
 - Modify medication instructions
 - Resolve conflicting medical information without human confirmation
 - Send messages or book appointments without approval
+- Auto-update a calendar when sources disagree, or when the proposed time conflicts with an existing commitment
 - Access information without explicit authorisation
 
 ## Technology
 
 - Tencent WorkBuddy
-- Custom WorkBuddy Skill
+- Custom WorkBuddy Skills (`caregiver-inbox-skill/`)
+- `wacli` — WhatsApp sync/send skill
+- `gog` — Google Calendar (and wider Google Workspace) skill
 - React
 - FastAPI
 - SQLite or JSON
-- Mock healthcare API
-- Messaging and calendar connectors
 
 ## Repository Structure
 
 ```text
 caregiver-inbox/
-├── workbuddy-skill/
-├── mock-health-portal/
-├── integration/
-├── synthetic-data/
-├── docs/
-└── demo/
+├── caregiver-inbox-skill/
+│   ├── caregiver-inbox.md        # orchestrator entry point
+│   ├── care-onboarding.md        # one-time source setup
+│   ├── care-source-sync.md       # retrieval
+│   ├── care-state-diff.md        # comparison and conflict detection
+│   ├── care-briefing.md          # caregiver-facing summary
+│   ├── care-action-executor.md   # approval-gated execution
+│   └── shared/                   # references and assets used by all of the above
+├── mock-health-portal/           # CarePortal Sandbox (FastAPI + React)
+├── caregiver-inbox-demo/         # sample run output
+└── archive/                      # superseded docs (e.g. the original single-skill version)
+```
